@@ -16,7 +16,6 @@ Install and verify:
 - Minikube (Docker driver)  
 - kubectl CLI  
 
-```powershell```
 docker --version
 kubectl version --client
 minikube version
