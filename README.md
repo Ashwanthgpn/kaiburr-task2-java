@@ -17,7 +17,9 @@ Install and verify:
 - kubectl CLI  
 
 docker --version
+
 kubectl version --client
+
 minikube version
 
 📸 Screenshot:
