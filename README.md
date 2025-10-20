@@ -21,6 +21,8 @@ docker --version
 kubectl version --client
 minikube version
 
+📸 Screenshot:
+
 ![](docs/screens/01-versions.png)
 
 ⚙️ Step 1 — Start Minikube and Cluster Setup
