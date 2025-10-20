@@ -28,7 +28,7 @@ minikube start --driver=docker
 minikube ip
 
 📸 Screenshot:
-![](docs/screens/02-start-minikube)
+![](docs/screens/02-start-minikube.png)
 
 
 🧱 Step 2 — Deploy MongoDB and Application
