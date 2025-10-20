@@ -31,3 +31,5 @@ build/
 
 # Environment / secrets (don't commit real secrets)
 *.env
+
+kaiburr-task1-java/
