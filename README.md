@@ -23,17 +23,18 @@ Verify installation:
 docker --version
 kubectl version --client
 minikube version
-📸 Screenshot 1 — Versions:
-![Versions](screens/01-versions.png)
+📸 Screenshot 1 — Versions
 
+docs/screens/01-versions.png
 
 
 ⚙️ Step 1 — Start Minikube and Cluster Setup
 minikube start --driver=docker
 minikube ip
 
+📸 Screenshot 2 — Start Minikube / IP
 
-📸 Screenshot 2 — Start Minikube
+docs/screens/02-start-minikube.png
 
 
 🧱 Step 2 — Deploy MongoDB and Application
@@ -51,11 +52,14 @@ Check resources:
 kubectl -n kaiburr get pods,svc
 kubectl -n kaiburr get pvc
 
+📸 Screenshot 3 — Pods & Services
 
-📸 Screenshot 3 — Pods and Services
+docs/screens/03-pods-svcs.png
 
 
 📸 Screenshot 4 — PVC
+
+docs/screens/04-pvc.png
 
 
 🐳 Step 3 — Build Docker Image and Load into Minikube
@@ -70,21 +74,23 @@ Example output:
 
 http://127.0.0.1:55029
 
-
 📸 Screenshot 5 — Service URL
+
+docs/screens/05-service-url.png
 
 
 🧪 Step 5 — Test the APIs
 
-Set your base URL (replace with the one shown by Minikube):
+Set your base URL (replace with what Minikube printed):
 
 $BASE = "http://127.0.0.1:55029"
 
 ✅ Health Check
 curl.exe "$BASE/api/health"
 
-
 📸 Screenshot 6 — Health Endpoint
+
+docs/screens/06-health.png
 
 
 📝 Create / Update a Task
@@ -94,8 +100,9 @@ $r = Invoke-RestMethod -Method Put -Uri "$BASE/api/tasks" `
 $ID = $r.id
 $r
 
-
 📸 Screenshot 7 — PUT Task
+
+docs/screens/07-put-task.png
 
 
 ⚡ Run Execution (BusyBox Pod)
@@ -106,15 +113,16 @@ Invoke-RestMethod -Method Put -Uri "$BASE/api/tasks/$ID/executions" `
   -ContentType "application/json" `
   -Body '{"command":"echo Hello from busybox"}'
 
-
 📸 Screenshot 8 — PUT Execution (K8s)
+
+docs/screens/08-put-execution-k8s.png
 
 
 🔎 Verify Task and Execution History
 Invoke-RestMethod -Uri "$BASE/api/tasks?id=$ID" | ConvertTo-Json -Depth 6
 
 
-Expected output:
+Expected output (example):
 
 {
   "id": "68f64473d9b41f7531c6bf96",
@@ -130,8 +138,9 @@ Expected output:
   ]
 }
 
-
 📸 Screenshot 9 — Task with Executions
+
+docs/screens/09-task-with-executions.png
 
 
 🧩 Architecture Overview
@@ -176,4 +185,3 @@ Kubernetes deployment and NodePort service ✅
 BusyBox pod execution and MongoDB log storage ✅
 
 End-to-end tests from PowerShell ✅
-
