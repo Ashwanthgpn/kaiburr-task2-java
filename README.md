@@ -16,7 +16,7 @@ Install and verify:
 - Minikube (Docker driver)  
 - kubectl CLI  
 
-powershell
+```powershell```
 docker --version
 kubectl version --client
 minikube version
@@ -28,6 +28,7 @@ minikube start --driver=docker
 minikube ip
 
 📸 Screenshot:
+
 ![](docs/screens/02-start-minikube.png)
 
 
@@ -53,7 +54,10 @@ kubectl -n kaiburr get pvc
 
 
 📸 Screenshots:
+
 ![](docs/screens/03-pods-svcs.png)
+
+
 ![](docs/screens/04-pvc.png)
 
 
@@ -83,6 +87,8 @@ http://127.0.0.1:55029
 
 
 📸 Screenshot:
+
+
 ![](docs/screens/05-service-url.png)
 
 
@@ -97,6 +103,8 @@ curl.exe "$BASE/api/health"
 
 
 📸 Screenshot:
+
+
 ![](docs/screens/06-health.png)
 
 
@@ -109,6 +117,8 @@ $r
 
 
 📸 Screenshot:
+
+
 ![](docs/screens/07-put-task.png)
 
 
@@ -122,6 +132,8 @@ Invoke-RestMethod -Method Put -Uri "$BASE/api/tasks/$ID/executions" `
 
 
 📸 Screenshot:
+
+
 ![](docs/screens/08-put-execution-k8s.png)
 
 
@@ -147,6 +159,8 @@ Expected output:
 
 
 📸 Screenshot:
+
+
 ![](docs/screens/09-task-with-executions.png)
 
 
